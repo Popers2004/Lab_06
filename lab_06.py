@@ -1,14 +1,26 @@
 # Abigail Pope
 def encode(password):
-# this is the define method for encoding the password
+    # this is the define method for encoding the password
     result = ""
-# string format of the password
+    # string format of the password
     for digit in password:
         encoded_digit = str((int(digit) + 3) % 10)
         result += encoded_digit
-# funtion for the password encoding
+    # funtion for the password encoding
     return result
+
+
 # return password after encoding
+
+def decode(encoded_password):
+    result = ""
+    for digit in encoded_password:
+        # decode digit by subtracting 3 from encoded digit
+        decoded_digit = str((int(digit) - 3))
+        result += decoded_digit
+        # add decoded digit to result and return decoded password
+    return result
+
 
 continue_password = True
 while continue_password:
@@ -24,8 +36,8 @@ while continue_password:
         encoded_password = encode(password)
         print('Your password has been encoded and stored!')
     if option == 2:
-    # decoded_password = decode(password)
-        print(f'The encoded password is {encoded_password}, and the original password is {password} ')
+        # Paul - Added decode function
+        decoded_password = decode(encoded_password)
+        print(f'The encoded password is {encoded_password}, and the original password is {decoded_password} ')
     if option == 3:
         continue_password = False
-    
