@@ -1,3 +1,4 @@
+# Abigail Pope
 def encode(password):
 # this is the define method for encoding the password
     result = ""
